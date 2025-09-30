@@ -1,0 +1,95 @@
+
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23a8e6cf"/><circle cx="200" cy="200" r="150" fill="%23ffe66d" opacity="0.6"/><rect x="400" y="300" width="300" height="200" fill="%234ecdc4" opacity="0.5"/><circle cx="800" cy="150" r="100" fill="%23ff6b35" opacity="0.7"/><text x="600" y="400" fill="white" font-size="20" opacity="0.8">Ciudad Vibrante</text></svg>') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(255, 255, 255, 0.6));
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: slideInDown 1s ease-out;
+}
+
+.hero-section .lead {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    animation: slideInDown 1s ease-out 0.2s both;
+}
+
+.btn-hero {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-fresh));
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3);
+    animation: slideInDown 1s ease-out 0.4s both;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-hero:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(78, 205, 196, 0.4);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll; 
+        min-height: 90vh;
+        padding-top: 76px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+    
+    .btn-hero {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Reserva tu cita médica en VitalCare - Atención personalizada y tecnología." />
+    <title>Reserva de Cita - VitalCare</title>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/hero.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-hospital text-primary me-2"></i>VitalCare
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="especialidades.html">Especialidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="reserva.html">Reservar Cita</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="CitaReservada.html">Mis Citas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="padding-top: 100px;"></div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bold mb-3">Reservar <span class="text-gradient">Cita Médica</span></h1>
+                        <p class="lead text-muted">Complete el formulario para agendar su cita</p>
+                    </div>
+
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-5">
+                            <form id="reservaForm" novalidate>
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label">
+                                            <i class="bi bi-person me-2"></i>Nombre Completo
+                                        </label>
+                                        <input type="text" class="form-control" id="nombre" required />
+                                        <div class="invalid-feedback">Por favor ingrese su nombre completo</div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="dni" class="form-label">
+                                            <i class="bi bi-card-text me-2"></i>DNI / Documento
+                                        </label>
+                                        <input type="text" class="form-control" id="dni" pattern="[0-9]{8}" maxlength="8" required />
+                                        <div class="invalid-feedback">Por favor ingrese un DNI válido (8 dígitos)</div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">
+                                            <i class="bi bi-envelope me-2"></i>Correo Electrónico
+                                        </label>
+                                        <input type="email" class="form-control" id="email" required />
+                                        <div class="invalid-feedback">Por favor ingrese un correo válido</div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <label for="telefono" class="form-label">
+                                            <i class="bi bi-telephone me-2"></i>Teléfono
+                                        </label>
+                                        <input type="tel" class="form-control" id="telefono" pattern="[0-9]{9}" maxlength="9" required />
+                                        <div class="invalid-feedback">Por favor ingrese un teléfono válido (9 dígitos)</div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <label for="especialidad" class="form-label">
+                                            <i class="bi bi-hospital me-2"></i>Especialidad
+                                        </label>
+                                        <select class="form-select" id="especialidad" required>
+                                            <option value="">Seleccione una especialidad</option>
+                                            <option value="Cardiología">Cardiología</option>
+                                            <option value="Pediatría">Pediatría</option>
+                                            <option value="Traumatología">Traumatología</option>
+                                            <option value="Neurología">Neurología</option>
+                                            <option value="Ginecología">Ginecología</option>
+                                            <option value="Dermatología">Dermatología</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor seleccione una especialidad</div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="doctor" class="form-label">
+                                            <i class="bi bi-person-badge me-2"></i>Doctor (Opcional)
+                                        </label>
+                                        <select class="form-select" id="doctor">
+                                            <option value="">Cualquier doctor disponible</option>
+
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <label for="fecha" class="form-label">
+                                            <i class="bi bi-calendar me-2"></i>Fecha de Cita
+                                        </label>
+                                        <input type="date" class="form-control" id="fecha" required />
+                                        <div class="invalid-feedback">Por favor seleccione una fecha</div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <label for="hora" class="form-label">
+                                            <i class="bi bi-clock me-2"></i>Hora de Cita
+                                        </label>
+                                        <select class="form-select" id="hora" required>
+                                            <option value="">Seleccione una hora</option>
+                                            <option value="08:00">08:00 AM</option>
+                                            <option value="08:30">08:30 AM</option>
+                                            <option value="09:00">09:00 AM</option>
+                                            <option value="09:30">09:30 AM</option>
+                                            <option value="10:00">10:00 AM</option>
+                                            <option value="10:30">10:30 AM</option>
+                                            <option value="11:00">11:00 AM</option>
+                                            <option value="11:30">11:30 AM</option>
+                                            <option value="12:00">12:00 PM</option>
+                                            <option value="14:00">02:00 PM</option>
+                                            <option value="14:30">02:30 PM</option>
+                                            <option value="15:00">03:00 PM</option>
+                                            <option value="15:30">03:30 PM</option>
+                                            <option value="16:00">04:00 PM</option>
+                                            <option value="16:30">04:30 PM</option>
+                                            <option value="17:00">05:00 PM</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor seleccione una hora</div>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <label for="motivo" class="form-label">
+                                            <i class="bi bi-chat-text me-2"></i>Motivo de Consulta
+                                        </label>
+                                        <textarea class="form-control" id="motivo" rows="3" placeholder="Describa brevemente el motivo de su consulta..."></textarea>
+                                    </div>
+
+
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                                            <i class="bi bi-calendar-check me-2"></i>Confirmar Reserva
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="confirmacionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Cita Reservada Exitosamente
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="confirmacionDetalle">
+
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="CitaReservada.html" class="btn btn-primary">Ver Mis Citas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong class="me-auto">Éxito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">Cita reservada correctamente</div>
+        </div>
+    </div>
+
+
+    <br><br><br>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>VitalCare</h5>
+                    <p>Expertos en salud comprometidos contigo. Atención personalizada y servicios de calidad.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Enlaces</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="especialidades.html">Especialidades</a></li>
+                        <li><a href="reserva.html">Reserva de Cita</a></li>
+                        <li><a href="CitaReservada.html">Citas Reservadas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Especialidades</h5>
+                    <ul class="footer-links">
+                        <li><a href="reservas.html">Cardiológia</a></li>
+                        <li><a href="reservas.html">Neurológia</a></li>
+                        <li><a href="reservas.html">Pediatria</a></li>
+                        <li><a href="reservas.html">Cirugia General</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Av. América Sur 123, El Recreo, Trujillo</li>
+                        <li><i class="fas fa-phone me-2"></i>+51 44 123 456</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@VitalCare.pe</li>
+                        <li><i class="fas fa-clock me-2"></i>Lun - Dom: 6:00 - 22:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr style="border-color: #555;">
+            <div class="text-center">
+                <p>&copy; 2025 VitalCare. Todos los derechos reservados. Enfocado en Trujillo, Perú.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="JS/CitaR.js"></script>
+</body>
+</html>
